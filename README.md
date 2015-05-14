@@ -9,16 +9,16 @@ To sync the content up to live:
 
 Install the AWS CLI tools, available at:
 
-  https://aws.amazon.com/cli/
+    https://aws.amazon.com/cli/
 
 Get the super secret access credentials. They are not below, you'll have
 to get them from somewhere else and then execute the following:
 
-  export AWS_ACCESS_KEY_ID=secret
-  export AWS_SECRET_ACCESS_KEY=secreter
+    export AWS_ACCESS_KEY_ID=secret
+    export AWS_SECRET_ACCESS_KEY=secreter
 
 And then run:
 
-  ./bin/sync.sh
+    ./bin/sync.sh
 
 #bossmode
