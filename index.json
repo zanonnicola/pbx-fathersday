@@ -1,0 +1,30 @@
+var gallery = [
+
+{
+ "ident":"001",
+ "img-lrg":"imagename1",
+ "img-med":"imagename2",
+ "img-sml":"imagename3",
+ "auth-name":"John Doe",
+ "auth-desc":"I love my Daddy so much!",
+},
+
+{
+ "ident":"002",
+ "img-lrg":"imagename1",
+ "img-med":"imagename2",
+ "img-sml":"imagename3",
+ "auth-name":"John Doe",
+ "auth-desc":"I love my Daddy so much!",
+},
+
+{
+ "ident":"003",
+ "img-lrg":"imagename1",
+ "img-med":"imagename2",
+ "img-sml":"imagename3",
+ "auth-name":"John Doe",
+ "auth-desc":"I love my Daddy so much!",
+},
+
+];

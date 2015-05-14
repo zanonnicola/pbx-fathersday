@@ -123,6 +123,31 @@
  <script src="js/foundation.min.js"></script>
  <script>
  $(document).foundation();
+
+$.getJSON("http://assets.photobox.com/assets/content_graphics/files/marketing/pr/fdc15/index.json?callback=gallery", function(result){
+   //response data are now in the result variable
+   alert(result);
+});
+
+
+ $.ajax({
+  url: 'http://assets.photobox.com/assets/content_graphics/files/marketing/pr/fdc15/index.json',
+  dataType: 'jsonp',
+  success: function(dataWeGotViaJsonp){
+   var text = '';
+   var len = dataWeGotViaJsonp.length;
+   for(var i=0;i<len;i++){
+    galleryEntry = dataWeGotViaJsonp[i];
+    text += galleryEntry.ident;
+   }
+   alert(text);
+  }
+  error: function () {
+   console.log('Dammit!');
+  }
+
+ });
+
  </script>
 </body>
 </html>

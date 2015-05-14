@@ -1,6 +1,15 @@
 
 $(document).ready(function(){
 
+ script = document.createElement("script");
+ script.type = "text/javascript";
+ script.src = "http://assets.photobox.com/assets/content_graphics/files/marketing/pr/fdc15/index.json?callback=gallery";
+
+
+ 
+
+
+
  var vid = $('#videolayer');
  var pauseButton = $('#videotoggle');
  function vidFade() {
