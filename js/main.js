@@ -1,33 +1,29 @@
 
-var vid = document.getElementById("videolayer");
-var pauseButton = document.getElementById("videotoggle");
-function vidFade() {
- vid.classList.add("stopfade");
-}
-vid.addEventListener('ended', function() {
+$(document).ready(function(){
+
+ var vid = $('#videolayer');
+ var pauseButton = $('#videotoggle');
+ function vidFade() {
+  vid.addClass('stopfade');
+ }
+ vid.on('ended', function() {
   // only functional if "loop" is removed
-  vid.pause();
+  vid.get(0).pause();
   // to capture IE10
   vidFade();
  });
-pauseButton.addEventListener("click", function() {
- vid.classList.toggle("stopfade");
- if (vid.paused) {
-  vid.play();
+ pauseButton.click(function() {
+  vid.toggleClass('stopfade');
+  if (vid.get(0).paused) {
+   vid.get(0).play();
   //pauseButton.innerHTML = "Pause Video";
-  pauseButton.css('background-color', 'green');
+  pauseButton.css('opacity', '0');
  } else {
-  vid.pause();
+  vid.get(0).pause();
   //pauseButton.innerHTML = "Play Video";
-  pauseButton.sy('background-color', 'green');
+  pauseButton.css('opacity', '0.5');
  }
 })
-
-
-$(document).ready(function(){
- foundation();
-
-
 
  // browser window scroll (in pixels) after which the "back to top" link is shown
  var offset = 300,
