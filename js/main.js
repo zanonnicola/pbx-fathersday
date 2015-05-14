@@ -1,0 +1,58 @@
+
+var vid = document.getElementById("videolayer");
+var pauseButton = document.getElementById("videotoggle");
+function vidFade() {
+ vid.classList.add("stopfade");
+}
+vid.addEventListener('ended', function() {
+  // only functional if "loop" is removed
+  vid.pause();
+  // to capture IE10
+  vidFade();
+ });
+pauseButton.addEventListener("click", function() {
+ vid.classList.toggle("stopfade");
+ if (vid.paused) {
+  vid.play();
+  //pauseButton.innerHTML = "Pause Video";
+  pauseButton.css('background-color', 'green');
+ } else {
+  vid.pause();
+  //pauseButton.innerHTML = "Play Video";
+  pauseButton.sy('background-color', 'green');
+ }
+})
+
+
+$(document).ready(function(){
+ foundation();
+
+
+
+ // browser window scroll (in pixels) after which the "back to top" link is shown
+ var offset = 300,
+  //browser window scroll (in pixels) after which the "back to top" link opacity is reduced
+  offset_opacity = 1200,
+  //duration of the top scrolling animation (in ms)
+  scroll_top_duration = 700,
+  //grab the "back to top" link
+  $back_to_top = $('.cd-top');
+
+ //hide or show the "back to top" link
+ $(window).scroll(function(){
+  ( $(this).scrollTop() > offset ) ? $back_to_top.addClass('cd-is-visible') : $back_to_top.removeClass('cd-is-visible cd-fade-out');
+  if( $(this).scrollTop() > offset_opacity ) { 
+   $back_to_top.addClass('cd-fade-out');
+  }
+ });
+
+ //smooth scroll to top
+ $back_to_top.on('click', function(event){
+  event.preventDefault();
+  $('body,html').animate({
+   scrollTop: 0 ,
+  }, scroll_top_duration
+  );
+ });
+
+});
